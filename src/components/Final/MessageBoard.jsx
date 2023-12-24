@@ -69,11 +69,7 @@ const MessageBoard = () => {
             <Card className="quote-card-view">
               <Card.Body>
               {messages.map((message) => (
-                <blockquote className="blockquote mb-0">
-                  <p style={{ textAlign: "justify" }}>
-                  <Message key={message.id} message={message} />
-                  </p>
-                </blockquote>
+                <Message key={message.id} message={message} />
               ))}
               </Card.Body>
             </Card>

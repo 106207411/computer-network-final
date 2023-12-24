@@ -11,7 +11,7 @@ const Audio = () => {
   useEffect(() => {
     const socket = io(SOCKET_SERVER_URL);
     // Dummy audio streaming logic (you might want to replace this with real audio streaming)
-    const audioData = 'YOUR_AUDIO_DATA_HERE';
+    const audioData = "../../../media/audio.mp3"
 
     // Emit the audio data to the server
     socket.emit('stream-audio', audioData);
@@ -21,8 +21,6 @@ const Audio = () => {
         console.log('Received audio data:', data);
         // Play the received audio data
         navigator.mediaDevices.getUserMedia({ audio: true })
-
-
     });
 
     return () => {
