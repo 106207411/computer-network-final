@@ -5,6 +5,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import axios from 'axios';
 import Card from "react-bootstrap/Card";
 
+const MSG_URL = 'http://54.152.133.111:3001/messages';
 
 const MessageBoard = () => {
   const [messages, setMessages] = useState([]);
@@ -12,7 +13,7 @@ const MessageBoard = () => {
 
   useEffect(() => {
     // Fetch messages from the server when the component mounts
-    axios.get('http://localhost:3001/messages')
+    axios.get(MSG_URL)
       .then(response => {
         setMessages(response.data);
       })
@@ -28,7 +29,7 @@ const MessageBoard = () => {
   const handleAddMessage = () => {
     if (inputValue.trim()) {
       // Add message to the server
-      axios.post('http://localhost:3001/messages', { content: inputValue.trim() })
+      axios.post(MSG_URL, { content: inputValue.trim() })
         .then(response => {
           setMessages([...messages, response.data]);
           setInputValue('');

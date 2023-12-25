@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
-const VIDEO_URL = 'http://localhost:8000/video';
+const VIDEO_URL = 'http://54.152.133.111:8000/video';
 
 const Video = () => {
   const videoRef = useRef(null);
