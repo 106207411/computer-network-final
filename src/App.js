@@ -14,7 +14,6 @@ import Video from "./components/Final/Video";
 import Footer from "./components/Footer";
 import { AuthProvider } from "./context/AuthContext";
 import { LoadingProvider, useLoading } from './context/LoadingContext'
-// import Resume from "./components/Resume/ResumeNew";
 import {
   BrowserRouter as Router,
   Route,
@@ -61,7 +60,6 @@ function App() {
           <Route path="/messageBoard" element={<MessageBoard />} />
           <Route path="/audio" element={<Audio />} />
           <Route path="/video" element={<Video />} />
-          {/* <Route path="/resume" element={<Resume />} /> */}
           <Route path="*" element={<Navigate to="/"/>} />
         </Routes>
         <Footer />

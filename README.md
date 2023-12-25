@@ -2,9 +2,7 @@
 
 The website is developed using React.js and Node.js.
 
-Requirements left: 
-- 聲音/電話 (audio live streaming)
-- 影片/視訊 (video live streaming)
+Requirements:
 ![alt text](./img/requirements.png)
 
 
@@ -17,27 +15,20 @@ Currently run on `node.js v14.17.3`. `nvm` is recommended to manage node version
 
 1. Install dependencies: `npm install`. 
 
-2. For the message board, run the json-server database (optional):
+2. For the message board, run the json-server database:
     ```bash
     npm install -g json-server
     json-server --watch db.json --port 3001
     ```
     The database is now running on [http://localhost:3001](http://localhost:3001).
 
-3. For the audio live streaming, run the server (on it, GPT code):
+3. For the audio/video streaming, run the server:
     ```bash
-    node ./src/Audio/broadcast.js
+    node ./src/stream/server.js
     ```
-    The server is now running on [http://localhost:3002](http://localhost:3002).
-    `./src/components/Final/Audio.jsx` is the frontend code for the audio live streaming and needs to be modified to connect to the server.
+    The server is now running on [http://localhost:8000](http://localhost:8000).
 
-4. For the video live streaming, run the server (not working yet):
-    ```bash
-    node ./src/Video/broadcast.js
-    ```
-    The server is now running on [http://localhost:3003](http://localhost:3003).
-    `./src/components/Final/Video.jsx` is the frontend code for the video live streaming and needs to be modified to connect to the server.
-5. Run the app:
+4. Run the app:
     ```bash
     PORT=5173 npm start
     ```
@@ -46,3 +37,6 @@ Currently run on `node.js v14.17.3`. `nvm` is recommended to manage node version
     ($env:PORT = "5173"); npm start
     ```
     Now access the webapp in [http://localhost:5173](http://localhost:5173).
+
+## References
+https://blog.logrocket.com/build-video-streaming-server-node/
