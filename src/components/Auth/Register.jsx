@@ -18,7 +18,7 @@ const Register = () => {
     name: "andy_test",
     email: "",
     password: "",
-    age: 0,
+    age: 100,
     self_intro: "test",
     gender: "Male",
     baseball: 0,
@@ -63,7 +63,14 @@ const Register = () => {
     }
 
     // This is for preflight check
-    await signUpHandler({ email: formData.email })
+    await signUpHandler({ 
+        email: formData.email,
+        password: formData.password,
+        name: formData.name,
+        age: formData.age,
+        gender: formData.gender,
+        self_intro: formData.self_intro,
+      })
       .then((res) => {
         console.log(res)
         if (res === 'Email already exists') {
