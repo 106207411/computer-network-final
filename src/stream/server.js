@@ -1,9 +1,15 @@
 const express = require("express");
 const app = express();
 const fs = require("fs");
+const https = require('https');
+
+const options = {
+    key: fs.readFileSync('privkey1.pem'),
+    cert: fs.readFileSync('cert1.pem'),
+};
 
 app.get("/", function (req, res) {
-    res.sendFile(__dirname + "/index.html");
+    res.status(404).send("File Not Found");
 });
 
 app.get("/video", function (req, res) {
@@ -11,7 +17,7 @@ app.get("/video", function (req, res) {
     if (!range) {
         res.status(400).send("Requires Range header");
     }
-    const videoPath = "./media/video.mp4";
+    const videoPath = __dirname + "/media/video.mp4";
     const videoSize = fs.statSync(videoPath).size;
     const CHUNK_SIZE = 10 ** 6;
     const start = Number(range.replace(/\D/g, ""));
@@ -33,7 +39,7 @@ app.get("/audio", function (req, res) {
     if (!range) {
         res.status(400).send("Requires Range header");
     }
-    const audioPath = "./media/audio.mp3";
+    const audioPath = __dirname + "/media/audio.mp3";
     const audioSize = fs.statSync(audioPath).size;
     const CHUNK_SIZE = 10 ** 6;
     const start = Number(range.replace(/\D/g, ""));
@@ -50,6 +56,10 @@ app.get("/audio", function (req, res) {
     audioStream.pipe(res);
 });
 
-app.listen(8000, function () {
-    console.log("Listening on port 8000!");
+// app.listen(8000, function () {
+//     console.log("Listening on port 8000!");
+// });
+
+https.createServer(options, app).listen(8000, () => {
+   console.log('Listening on port 8000');
 });

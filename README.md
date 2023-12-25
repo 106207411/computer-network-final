@@ -1,8 +1,9 @@
 # Final Project
 
 The website is developed using React.js and Node.js.
+Currently host on EC2: https://cnfinal.stadium.rdto.io
 
-Requirements:
+All requirements are satisfied including SSL issuance
 ![alt text](./img/requirements.png)
 
 
@@ -15,20 +16,29 @@ Currently run on `node.js v14.17.3`. `nvm` is recommended to manage node version
 
 1. Install dependencies: `npm install`. 
 
-2. For the message board, run the json-server database:
+2. Use certbox to issue SSL certificate (optional):
+
+    https://certbot.eff.org/instructions?ws=other&os=ubuntufocal
+
+3. You can also setup Nginx as a reverse proxy (optional):
+
+    See the config file `cnfinal.stadium.rdto.io`
+
+3. For the message board service, run the json-server database:
     ```bash
     npm install -g json-server
-    json-server --watch db.json --port 3001
+    json-server --watch db.json --port 3001 --host 0.0.0.0
+    #set --host so the service can be accessed from everywhere instead of only 127.0.0.1
     ```
     The database is now running on [http://localhost:3001](http://localhost:3001).
 
-3. For the audio/video streaming, run the server:
+4. For the audio/video streaming service, run the server:
     ```bash
     node ./src/stream/server.js
     ```
     The server is now running on [http://localhost:8000](http://localhost:8000).
 
-4. Run the app:
+5. Run the app:
     ```bash
     PORT=5173 npm start
     ```

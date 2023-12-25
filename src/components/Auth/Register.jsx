@@ -94,23 +94,23 @@ const Register = () => {
           >
           <div className="div">
             <h1>
-              註冊
+              Register
             </h1>
             <div className="textbox-group">
-              <div className="textbox-title">帳號</div>
-              <input className="textbox" name="email" placeholder="電子信箱" onChange={handleFormChange}/>
+              <div className="textbox-title">Account</div>
+              <input className="textbox" name="email" placeholder="email" onChange={handleFormChange}/>
             </div>
             <div className="textbox-group">
-              <div className="textbox-title">密碼</div>
+              <div className="textbox-title">Password</div>
               <input 
                 className="textbox"
                 name="password"
                 type="password"
-                placeholder="至少8個英文字母 (需包含大小寫)"
+                placeholder="At least 8 chars (include UPPER case and number)"
                 onChange={handleFormChange}
               />
             </div>
-            <div className="button" onClick={handleClickNextStep}>下一步</div>
+            <div className="button" onClick={handleClickNextStep}>Register</div>
           </div>
           </Col>
         </Row>

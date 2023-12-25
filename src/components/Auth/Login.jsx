@@ -76,17 +76,17 @@ const Login = () => {
           >
           <div className="div">
             <h1>
-              登入
+              Login
             </h1>
             <div className="textbox-group">
-              <div className="textbox-title">帳號</div>
+              <div className="textbox-title">Account</div>
               <input className="textbox" name="email" onChange={handleFormChange}/>
             </div>
             <div className="textbox-group">
-              <div className="textbox-title">密碼</div>
+              <div className="textbox-title">Password</div>
               <input className="textbox" type="password" name="password" onChange={handleFormChange}/>
             </div>
-            <button className="button" onClick={handleLoginClick}>登入</button>
+            <button className="button" onClick={handleLoginClick}>Login</button>
           </div>
           </Col>
         </Row>
