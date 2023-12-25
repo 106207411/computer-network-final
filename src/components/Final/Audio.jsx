@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
-const AUDIO_URL = 'http://54.152.133.111:8000/audio';
+const AUDIO_URL = '/audio_srv';
 
 const Audio = () => {
 

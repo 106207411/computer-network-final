@@ -5,7 +5,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import axios from 'axios';
 import Card from "react-bootstrap/Card";
 
-const MSG_URL = 'http://54.152.133.111:3001/messages';
+const MSG_URL = '/msg_srv';
 
 const MessageBoard = () => {
   const [messages, setMessages] = useState([]);

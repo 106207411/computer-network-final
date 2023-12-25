@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
-const VIDEO_URL = 'http://54.152.133.111:8000/video';
+const VIDEO_URL = '/video_srv';
 
 const Video = () => {
   const videoRef = useRef(null);
@@ -17,7 +17,7 @@ const Video = () => {
               paddingTop: "0px",
               paddingBottom: "50px",
             }}
-          >4
+          >
           <div className="div">
             <h1>Video Streaming</h1>
             <div>
